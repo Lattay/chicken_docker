@@ -10,4 +10,6 @@ RUN make PLATFORM=linux
 RUN make PLATFORM=linux install
 RUN chicken-install r7rs
 RUN ln -s csi /usr/local/bin/scheme-banner
+WORKDIR /
+RUN rm -rf /build
 CMD ["scheme-banner"]
