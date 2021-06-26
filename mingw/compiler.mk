@@ -5,3 +5,4 @@ C_COMPILER=gcc
 TARGET_RUN_PREFIX='C:\\\\chicken'
 TARGET_C_COMPILER=x86_64-w64-mingw32-gcc-win32
 TARGET_LIBRARIAN=x86_64-w64-mingw32-gcc-ar-win32
+TARGET_LIBRARIES=-lm -lws2_32
