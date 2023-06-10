@@ -6,7 +6,7 @@ RUN apt-get update
 RUN apt-get -y --no-install-recommends install make
 RUN apt-get -y --no-install-recommends install gcc-mingw-w64-x86-64
 WORKDIR /build
-COPY checksum checksum
+COPY ../source-checksum checksum
 ADD https://code.call-cc.org/releases/5.2.0/chicken-5.2.0.tar.gz chicken.tar.gz
 RUN sha256sum -c checksum
 RUN tar --directory=. --strip-components 1 -xf chicken.tar.gz
@@ -28,7 +28,7 @@ RUN apt-get update
 RUN apt-get -y --no-install-recommends install make
 RUN apt-get -y --no-install-recommends install gcc libc-dev
 WORKDIR /build
-COPY checksum checksum
+COPY ../source-checksum checksum
 ADD https://code.call-cc.org/releases/5.2.0/chicken-5.2.0.tar.gz chicken.tar.gz
 RUN sha256sum chicken.tar.gz && sha256sum -c checksum
 RUN tar --directory=. --strip-components 1 -xf chicken.tar.gz
